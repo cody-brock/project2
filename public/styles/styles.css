@@ -2,9 +2,14 @@ body {
   text-align: center;
 }
 
+.container {
+  padding: 50px 0 50px 0;
+}
+
 #connect4 {
-  background-color: grey;
+  background-color: green;
   display: inline-block;
+  padding: 0px 20px;
 }
 
 .col {
