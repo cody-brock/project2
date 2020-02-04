@@ -1,24 +1,32 @@
-var db = require("../models");
+const db = require("../models");
 
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    res.render("index");
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
+  app.get('/game', function(req, res){
+    res.writeHead(302, {
+      'Location': '/'+generateHash(6)
     });
-  });
+    res.end();
+  })
+
+  app.get("/[A-Za-z0-9]{6}", (req, res) => {
+    res.render("game");
+  })
+
+
+  
+  const generateHash = (length) => {
+    let hashPool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+      output = '';
+    for(let i = 0; i < length; i++) {
+      output += hashPool.charAt(Math.floor(Math.random() * hashPool.length));
+    }
+    return output;
+  };
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
