@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
@@ -24,6 +25,7 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+app.use(express.static("public"));
 
 var syncOptions = { force: false };
 
