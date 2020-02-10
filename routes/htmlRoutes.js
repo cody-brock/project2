@@ -17,8 +17,6 @@ module.exports = function(app) {
     res.render("game");
   })
 
-
-  
   const generateHash = (length) => {
     let hashPool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
       output = '';
