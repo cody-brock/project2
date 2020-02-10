@@ -6,10 +6,10 @@ body {
   padding: 50px 0 50px 0;
 }
 
-#connect4 {
-  background-color: green;
+.game {
+  background-color: #536976;
   display: inline-block;
-  padding: 0px 20px;
+  padding: 15px 25px;
 }
 
 .col {
@@ -41,8 +41,13 @@ body {
   background-color: black;
 }
 
+#gameNav {
+  padding: 15px;
+}
+
 .list-group-item {
   /* color: purple; */
   height: 50;
   /* font-size: 30px; */
 }
+
