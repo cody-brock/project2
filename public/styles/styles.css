@@ -40,3 +40,9 @@ body {
 .col.black {
   background-color: black;
 }
+
+.list-group-item {
+  /* color: purple; */
+  height: 50;
+  /* font-size: 30px; */
+}

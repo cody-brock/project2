@@ -53,7 +53,7 @@ class Connect4 {
           for (var i = 1; i < 6; i++) {
             console.log("outside outside");
             // console.log("data[i]: ", data[i],  i)
-            const {column, row, player} = data[data.length -1] ? data[data.length-i] : {column: '', row: '', player: ''};
+            const {column, row, player} = data[data.length - i] ? data[data.length-i] : {column: '', row: '', player: ''};
             recentMove.append(`<li class="list-group-item" style="color: ${player};">${column + row}</li>`);
             // recentMove.append(createNewRow([data[i].column, data[i].row], data[i].player));
           }
@@ -140,8 +140,8 @@ class Connect4 {
                   for (var i = 1; i < 6; i++) {
                     console.log("inside inside");
                     // console.log("data[i]: ", data[i],  i)
-                    const {column, row, player} = data[data.length - 1] ? data[data.length-i] : {column: '', row: '', player: ''};
-                    console.log("column issue here: ", column)
+                    const {column, row, player} = data[data.length - i] ? data[data.length-i] : {column: '.', row: '', player: 'white'};
+                    // console.log("column issue here: ", column)
                     recentMove.append(`<li class="list-group-item" style="color: ${player};">${column + row}</li>`);
                     // recentMove.append(createNewRow([data[i].column, data[i].row], data[i].player));
                   }
@@ -205,8 +205,9 @@ class Connect4 {
                 /* Read more about handling dismissals below */
                 result.dismiss === Swal.DismissReason.cancel
               ) {
-                // $.get("/", function(data))
-                //need to insert something here...
+                // function() {
+                  window.location = "/";
+              // };
               }
             })
             
