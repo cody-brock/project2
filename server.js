@@ -34,10 +34,10 @@ require("./routes/apiRoutes")(app);
 // app.use("/js", express.static(__dirname + '/js'));
 // app.use("/img", express.static(__dirname + '/img'));
 
-const generateHash = (length) => {
-  let hashPool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
+function generateHash(length){
+  var hashPool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
     room = '';
-  for (let i = 0; i < length; i++) {
+  for (var i = 0; i < length; i++) {
     room += hashPool.charAt(Math.floor(Math.random() * hashPool.length));
   }
   return room;
@@ -154,7 +154,7 @@ io.sockets.on("connection", (socket) => {
 });
 
 var syncOptions = {
-  force: false
+  force: true
 };
 
 // If running a test, set syncOptions.force to true
