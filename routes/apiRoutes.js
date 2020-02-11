@@ -17,15 +17,12 @@ module.exports = function(app) {
 
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+    db.Example.destroy({ where: { id: req.params.id } }).then(function(
+      dbExample
+    ) {
       res.json(dbExample);
     });
   });
-
-
-
-
-
 
   // POST route for saving a new end of game result
   app.post("/result", function(req, res) {
@@ -62,9 +59,8 @@ module.exports = function(app) {
   app.get("/updateMove", function(req, res) {
     // console.log("we are updating the move now yeahhhh");
     // console.log(req.body);
-    db.Move.findAll({
-    }).then(function(dbResult) {
+    db.Move.findAll({}).then(function(dbResult) {
       res.json(dbResult);
-    })
-  })
+    });
+  });
 };
