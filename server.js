@@ -17,6 +17,7 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 app.use(express.static("public"));
+// app.use(express.static("public"));
 
 // Handlebars
 app.engine(
@@ -29,9 +30,9 @@ app.set("view engine", "handlebars");
 
 // Routes
 require("./routes/apiRoutes")(app);
-app.use(express.static("public"));
-app.use("/css", express.static(__dirname + '/css'));
-app.use("/js", express.static(__dirname + '/js'));
+// app.use("/css", express.static(__dirname + '/css'));
+// app.use("/js", express.static(__dirname + '/js'));
+// app.use("/img", express.static(__dirname + '/img'));
 
 const generateHash = (length) => {
   let hashPool = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',

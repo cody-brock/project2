@@ -1,5 +1,6 @@
 body {
   text-align: center;
+  background-image: url('/img/connect4.jpeg');
 }
 
 .container {
