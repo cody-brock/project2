@@ -23,10 +23,6 @@ module.exports = function(app) {
   });
 
 
-
-
-
-
   // POST route for saving a new end of game result
   app.post("/result", function(req, res) {
     // console.log("We are inside the result post api route!");
