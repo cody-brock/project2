@@ -5,7 +5,7 @@ body {
 
 .container {
   padding: 50px 0 50px 0;
-  background-color: rgba(37, 37, 105, 0.897);
+  /* background-color: rgba(37, 37, 105, 0.897); */
 }
 
 .game {
@@ -53,3 +53,11 @@ body {
   /* font-size: 30px; */
 }
 
+body {
+  /* margin-top: 100px; */
+  /* padding-top: 200px; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
